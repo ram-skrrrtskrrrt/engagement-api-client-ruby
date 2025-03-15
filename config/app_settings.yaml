@@ -24,12 +24,12 @@ engagement_types: #Order here is echoed in output.
   user_follows: true
   user_profile_clicks: true
   hashtag_clicks: true
-  video_views: false
-  detail_expands: false
-  media_clicks: false
-  permalink_clicks: false
-  app_opens: false
-  app_install_attempts: false
+  video_views: true
+  detail_expands: true
+  media_clicks: true
+  permalink_clicks: true
+  app_opens: true
+  app_install_attempts: true
 
 engagement_groupings:  
   by_type:  #Grand totals.
