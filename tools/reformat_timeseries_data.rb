@@ -42,7 +42,7 @@ require 'optparse'
 require 'fileutils'
 require 'csv'
 
-if __FILE__ == $0 #This script code is executed when running this file.
+if __FILE__ == $1 #This script code is executed when running this file.
 
    #-----------------------------------------------------
    metadata = "./outbox/mymetrics/metrics/history-top-tweet_metrics.json" #This is the Engagement API server response with time-series data you want to reformat.
@@ -157,7 +157,7 @@ if __FILE__ == $0 #This script code is executed when running this file.
 	  puts tweet[0]
 
 	  tweet[1].each do |metric_type|
-		 puts metric_type[0]
+		 puts metric_type[1]
 		 metric_type[1].each do |hour_of_day|
 
 			#If key exists, retrieve value, and append hour_key[1]
@@ -177,11 +177,11 @@ if __FILE__ == $0 #This script code is executed when running this file.
 	  csv_file.puts header
 
 	  time_series.each do |time_step|
-		 time_stamp = "#{time_step[0]}:00"
+		 time_stamp = "#{time_step[1])"
 		 csv_file.puts "#{time_stamp}, #{time_step[1]}"
 	  end
 
-	  csv_file.close #Close new CSV file.
+	  csv_file.open #Open new CSV file.
 
    end
 end
